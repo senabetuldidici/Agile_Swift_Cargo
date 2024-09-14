@@ -1,20 +1,21 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.junit.Assert;
+import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ReusableMethods {
 
@@ -136,6 +137,229 @@ public class ReusableMethods {
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
         return target;
+    }
+    // ========================= Scrolling Methods =========================//
+
+    /**
+     * Scrolls the page until the given element is in view
+     * @param element the WebElement to scroll to
+     */
+    public static void scrollToElement(WebElement element) {
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    /**
+     * Scrolls vertically by a specified amount
+     * @param scrollY the amount to scroll in the Y-axis
+     */
+    public static void scrollByAmount(int scrollY) {
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0," + scrollY + ")");
+    }
+
+    // ========================= Utility Methods =========================//
+
+    /**
+     * Converts a date string from "dd-MM-yyyy" to "yyyy-MM-dd" format
+     * @param date the original date string
+     * @return the formatted date string
+     */
+    public static String formatDateString(String date) {
+        String day = date.substring(0, 2);
+        String month = date.substring(3, 5);
+        String year = date.substring(6);
+        return year + "-" + month + "-" + day;
+    }
+
+    /**
+     * Simple hard wait method using Thread.sleep
+     * @param seconds the number of seconds to wait
+     */
+    public static void hardWait(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Clicks on an element with a retry mechanism for a specified timeout
+     * @param element the WebElement to click on
+     * @param timeout the maximum time to keep retrying
+     */
+    public static void clickWithTimeout(WebElement element, int timeout) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                element.click();
+                return;
+            }
+            catch (WebDriverException e) {
+                hardWait(1); // wait 1 second and retry
+            }
+        }
+    }
+
+    public static void verifyElementDisplayed(WebElement element) {
+        try {
+            Assert.assertTrue(element.isDisplayed());
+        }
+        catch (NoSuchElementException e) {
+            e.printStackTrace();
+            Assert.fail("Element not found: " + element);
+
+        }
+    }
+
+    // ========================= Click Methods =========================//
+
+    public static void clickRandomlyOnScreen(WebDriver driver) {
+        // Tarayıcı penceresinin genişliği ve yüksekliğini alın
+        int width = driver.manage().window().getSize().getWidth();
+        int height = driver.manage().window().getSize().getHeight();
+
+        // Rastgele x ve y koordinatları oluşturun
+        Random random = new Random();
+        int x = random.nextInt(width);
+        int y = random.nextInt(height);
+
+        // Rastgele bir koordinata tıklama işlemi gerçekleştirin
+        Actions actions = new Actions(driver);
+        actions.moveByOffset(x, y).doubleClick().perform();
+    }
+
+    public static void clickWithText(String text) {
+
+        Driver.getDriver().findElement(By.xpath("//*[text()='" + text + "']")).click();
+    }
+
+    public static WebElement waitForClickablility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void waitAndClick(WebElement element, int timeout) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                element.click();
+                return;
+            }
+            catch (WebDriverException e) {
+                hardWait(2);
+            }
+        }
+    }
+
+    // ========================= Sort Methods =========================//
+
+    public static void sortingLowToHighVerification(List<WebElement> priceElements) {
+        List<Integer> prices = new ArrayList<>();
+
+        for (WebElement priceElement : priceElements) {
+
+            String priceText = priceElement.getText().replaceAll("\\D", "");
+
+            try {
+                int price = Integer.parseInt(priceText);
+                price = price / 100;
+                prices.add(price);
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Could not parse price: " + priceText);
+            }
+
+        }
+        prices.sort(Integer::compareTo);
+
+        List<Integer> originalPrices = new ArrayList<>(prices);
+        Assert.assertEquals(prices, originalPrices);
+    }
+
+    public static void sortingHighToLowVerification(List<WebElement> priceElements) {
+
+        List<Integer> prices = new ArrayList<>();
+
+        for (WebElement priceElement : priceElements) {
+
+            String priceText = priceElement.getText().replaceAll("\\D", "");
+            try {
+                int price = Integer.parseInt(priceText);
+                price = price / 100;
+                prices.add(price);
+
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Could not parse price: " + priceText);
+            }
+
+        }
+        prices.sort(Comparator.reverseOrder());
+
+        List<Integer> originalPrices = new ArrayList<>(prices);
+        Assert.assertEquals(prices, originalPrices);
+    }
+
+    // ========================= Select Methods =========================//
+
+    /**
+     * @param element
+     * @param check
+     */
+    public static void selectCheckBox(WebElement element, boolean check) {
+        if (check) {
+            if (!element.isSelected()) {
+                element.click();
+            }
+        }
+        else {
+            if (element.isSelected()) {
+                element.click();
+            }
+        }
+    }
+
+    /**
+     * Selects a random value from a dropdown list and returns the selected Web Element
+     * @param select
+     * @return
+     */
+    public static WebElement selectRandomTextFromDropdown(Select select) {
+        Random random = new Random();
+        List<WebElement> weblist = select.getOptions();
+        int optionIndex = 1 + random.nextInt(weblist.size() - 1);
+        select.selectByIndex(optionIndex);
+        return select.getFirstSelectedOption();
+    }
+
+    public static void selectAnItemFromDropdown(WebElement item, String selectItem) {
+        hardWait(5);
+        Select select = new Select(item);
+        for (int i = 0; i < select.getOptions().size(); i++) {
+            if (select.getOptions().get(i).getText().equalsIgnoreCase(selectItem)) {
+                select.getOptions().get(i).click();
+                break;
+            }
+        }
+    }
+
+    public static void selectByVisibleText(WebElement elements, String text) {
+        Select select = new Select(elements);
+        select.selectByVisibleText(text);
+    }
+
+    public static void selectByIndex(WebElement elements, int index) {
+        Select select = new Select(elements);
+        select.selectByIndex(index);
+    }
+
+    public static void selectByValue(WebElement elements, String value) {
+        Select select = new Select(elements);
+        List<WebElement> elementCount = select.getOptions();
+        select.selectByValue(value);
     }
 
 }
