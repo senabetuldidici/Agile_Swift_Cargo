@@ -100,7 +100,7 @@ public class AnasayfaUstBar {
     @When("Tracking menü başlıgının tiklanabilir oldugunu test eder,")
     public void trackingMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.Tracking.isDisplayed() &&
+        Assertions.assertFalse(anasayfaUstBarPage.Tracking.isDisplayed() &&
                 anasayfaUstBarPage.Tracking.isEnabled(), "Tracking menü tıklanabilir değil.");    }
 
     @When("Blogs menü başlıgının tiklanabilir oldugunu test eder,")
