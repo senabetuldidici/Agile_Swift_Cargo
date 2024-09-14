@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.549" tests="3" skipped="0" failures="3" errors="0">
+<testcase classname="US001 Anasayfa ust bar ogeleri testi" name="TC01 Menü başlıklarının görünür olmasi" time="0.085">
+<failure/>
+<system-out><![CDATA[
+Given kullanici "toUrl" sitesine gider......................................undefined
+And 2 saniye bekler.........................................................skipped
+When ana sayfa üst barını kontrol eder......................................skipped
+When Home menü başlıgının görünür oldugunu test eder,.......................skipped
+And Pricing menü başlıgının görünür oldugunu test eder,.....................skipped
+When Tracking menü başlıgının görünür oldugunu test eder,...................skipped
+And Blogs menü başlıgının görünür oldugunu test eder,.......................skipped
+And About menü başlıgının görünür oldugunu test eder,.......................skipped
+And FAQ menü başlıgının görünür oldugunu test eder,.........................skipped
+And Contact menü başlıgının görünür oldugunu test eder,.....................skipped
+]]></system-out>
+</testcase>
+<testcase classname="US001 Anasayfa ust bar ogeleri testi" name="TC02 Menü başlıklarının tiklanabilir olmasi" time="0.005">
+<failure/>
+<system-out><![CDATA[
+Given kullanici "toUrl" sitesine gider......................................undefined
+And 2 saniye bekler.........................................................skipped
+When Home menü başlıgının tiklanabilir oldugunu test eder,..................skipped
+And Pricing menü başlıgının tiklanabilir oldugunu test eder,................skipped
+When Tracking menü başlıgının tiklanabilir oldugunu test eder,..............skipped
+And Blogs menü başlıgının tiklanabilir oldugunu test eder,..................skipped
+And About menü başlıgının tiklanabilir oldugunu test eder,..................skipped
+And FAQ menü başlıgının tiklanabilir oldugunu test eder,....................skipped
+And Contact menü başlıgının tiklanabilir oldugunu test eder,................skipped
+]]></system-out>
+</testcase>
+<testcase classname="US001 Anasayfa ust bar ogeleri testi" name="TC02 Menü başlıklarının tiklanabilir olmasi" time="0.009">
+<failure/>
+<system-out><![CDATA[
+Given kullanici "toUrl" sitesine gider......................................undefined
+And 2 saniye bekler.........................................................skipped
+When Home menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+And Pricing menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+When Tracking menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+And Blogs menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+And About menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+And FAQ menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+And Contact menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,.skipped
+And sayfayi kapatir.........................................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
