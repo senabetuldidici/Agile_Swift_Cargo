@@ -150,23 +150,6 @@ public class ReusableMethods {
             return result;
         }
 
-    // String'i ters çeviren reusable method
-    public static String reverseString(String str) {
-        if (str == null || str.isEmpty()) {
-            return "Boş ya da geçersiz string!";
-        }
-        StringBuilder reversed = new StringBuilder(str);
-        return reversed.reverse().toString();
-    }
-
-    public static void main(String[] args) {
-        // Methodu tekrar kullanıyoruz
-        String text1 = "Merhaba Dünya!";
-        String text2 = "Kodlama";
-
-        System.out.println(reverseString(text1));  // Çıktı: !aynüD abahreM
-        System.out.println(reverseString(text2));  // Çıktı: amaldok
-    }
 }
 
 
