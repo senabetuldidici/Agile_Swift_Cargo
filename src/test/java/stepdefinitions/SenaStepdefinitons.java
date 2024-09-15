@@ -267,7 +267,7 @@ public class SenaStepdefinitons {
     public void login_butonuna_tiklar_ve_gecerli_bilgiler_ile_siteye_giris_yapar() {
         senaPage.loginButonu.click();
         senaPage.emailKutusu.sendKeys(ConfigReader.getProperty("toMerchantGecerliEmail"));
-        senaPage.sifreKutusu.sendKeys(ConfigReader.getProperty("toMerchantGecersizPassword"));
+        senaPage.sifreKutusu.sendKeys(ConfigReader.getProperty("toMerchantGecerliPassword"));
         senaPage.signInButonu.click();
     }
     @Then("marchant dashboard sayfasina erisim saglar")
