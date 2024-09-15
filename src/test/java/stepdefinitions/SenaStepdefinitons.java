@@ -262,5 +262,26 @@ public class SenaStepdefinitons {
         Assertions.assertTrue((acilanLatestBlogsYazisiBasligi).contains(latestBlogsYazisiBasligi));
     }
 
+    @When("login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar")
+    public void login_butonuna_tiklar_ve_gecerli_bilgiler_ile_siteye_giris_yapar() {
+        senaPage.loginButonu.click();
+        senaPage.emailKutusu.sendKeys(ConfigReader.getProperty("toMerchantGecerliEmail"));
+        senaPage.sifreKutusu.sendKeys(ConfigReader.getProperty("toMerchantGecerliPassword"));
+        senaPage.signInButonu.click();
+    }
+    @Then("marchant dashboard sayfasina erisim saglar")
+    public void marchant_dashboard_sayfasina_erisim_saglar() {
+        senaPage.marchantDashboardAnasayfaBasligi.isDisplayed();
+    }
+    @Then("sol tarafta bulunan menude {string} basliginin gorunur ve tiklanabilir oldugunu test eder")
+    public void sol_tarafta_bulunan_menude_basliginin_gorunur_ve_tiklanabilir_oldugunu_test_eder(String string) {
+        senaPage.accountsBasligi.isDisplayed();
+        senaPage.accountsBasligi.click();
+    }
+    @Then("Accounts basligi altinda yer alan {string} baglantisinin gorunur ve tiklanabilir oldugunu test eder")
+    public void accounts_basligi_altinda_yer_alan_baglantisinin_gorunur_ve_tiklanabilir_oldugunu_test_eder(String string) {
+        senaPage.payoutButonu.isDisplayed();
+        senaPage.payoutButonu.click();
+    }
 
 }

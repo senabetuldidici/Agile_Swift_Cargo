@@ -58,5 +58,28 @@ public class SenaPage {
 
     @FindBy (xpath = "(//*[@class='img-fluid rounded-start'])[2]")
     public WebElement latestBlogsYazisi;
+
+    @FindBy (xpath = "//*[@class='nav-link auth-btn']")
+    public WebElement loginButonu;
+
+    @FindBy (xpath = "(//*[@class='form-control form-control-lg '])[1]")
+    public WebElement emailKutusu;
+
+    @FindBy (xpath = "(//*[@class='form-control form-control-lg '])[2]")
+    public WebElement sifreKutusu;
+
+    @FindBy (xpath = "//*[@class='btn btn-primary btn-lg btn-block']")
+    public WebElement signInButonu;
+
+    @FindBy (xpath = "//*[@class='h3 d-inline']")
+    public WebElement marchantDashboardAnasayfaBasligi;
+
+    @FindBy (xpath = "//*[@aria-controls='accounts']")
+    public WebElement accountsBasligi;
+
+    @FindBy (xpath = "(//*[@class='nav-link '])[4]")
+    public WebElement payoutButonu;
+
+
 }
 
