@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import pages.AnasayfaUstBarPage;
+import pages.SenaPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -13,9 +13,9 @@ import utilities.ReusableMethods;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static utilities.Driver.driver;
 
-public class AnasayfaUstBar {
+public class SenaStepdefinitons {
 
-    AnasayfaUstBarPage anasayfaUstBarPage = new AnasayfaUstBarPage();
+    SenaPage senaPage = new SenaPage();
     static String ilkBlogYazisiBasligi;
     static String yonlendirilenSayfaBlogYazisiBasligi;
     static int ilkGorunurlukSayisi;
@@ -33,42 +33,42 @@ public class AnasayfaUstBar {
 
     @When("ana sayfa üst barını kontrol eder")
     public void ana_sayfa_ust_barini_kontrol_eder() {
-        Assertions.assertTrue(anasayfaUstBarPage.ustBar.isDisplayed());
+        Assertions.assertTrue(senaPage.ustBar.isDisplayed());
     }
 
     @When("Home menü başlıgının görünür oldugunu test eder,")
     public void homeMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.Home.isDisplayed());
+        Assertions.assertTrue(senaPage.Home.isDisplayed());
     }
 
     @When("Pricing menü başlıgının görünür oldugunu test eder,")
     public void pricingMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.Pricing.isDisplayed());
+        Assertions.assertTrue(senaPage.Pricing.isDisplayed());
     }
 
     @When("Tracking menü başlıgının görünür oldugunu test eder,")
     public void trackingMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.Tracking.isDisplayed());
+        Assertions.assertTrue(senaPage.Tracking.isDisplayed());
     }
 
     @When("Blogs menü başlıgının görünür oldugunu test eder,")
     public void blogsMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.Blogs.isDisplayed());
+        Assertions.assertTrue(senaPage.Blogs.isDisplayed());
     }
 
     @When("About menü başlıgının görünür oldugunu test eder,")
     public void aboutMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.About.isDisplayed());
+        Assertions.assertTrue(senaPage.About.isDisplayed());
     }
 
     @When("FAQ menü başlıgının görünür oldugunu test eder,")
     public void faqMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.FAQ.isDisplayed());
+        Assertions.assertTrue(senaPage.FAQ.isDisplayed());
     }
 
     @When("Contact menü başlıgının görünür oldugunu test eder,")
     public void contactMenüBaşlıgınınGörünürOldugunuTestEder() {
-        Assertions.assertTrue(anasayfaUstBarPage.Contact.isDisplayed());
+        Assertions.assertTrue(senaPage.Contact.isDisplayed());
     }
 
     @And("sayfayi kapatir")
@@ -86,53 +86,53 @@ public class AnasayfaUstBar {
     @When("Home menü başlıgının tiklanabilir oldugunu test eder,")
     public void homeMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.Home.isDisplayed() &&
-                anasayfaUstBarPage.Home.isEnabled(), "Home menü tıklanabilir değil.");
+        Assertions.assertTrue(senaPage.Home.isDisplayed() &&
+                senaPage.Home.isEnabled(), "Home menü tıklanabilir değil.");
     }
 
     @When("Pricing menü başlıgının tiklanabilir oldugunu test eder,")
     public void pricingMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.Pricing.isDisplayed() &&
-                anasayfaUstBarPage.Pricing.isEnabled(), "Pricing menü tıklanabilir değil.");
+        Assertions.assertTrue(senaPage.Pricing.isDisplayed() &&
+                senaPage.Pricing.isEnabled(), "Pricing menü tıklanabilir değil.");
     }
 
     @When("Tracking menü başlıgının tiklanabilir oldugunu test eder,")
     public void trackingMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.Tracking.isDisplayed() &&
-                anasayfaUstBarPage.Tracking.isEnabled(), "Tracking menü tıklanabilir değil.");    }
+        Assertions.assertTrue(senaPage.Tracking.isDisplayed() &&
+                senaPage.Tracking.isEnabled(), "Tracking menü tıklanabilir değil.");    }
 
     @When("Blogs menü başlıgının tiklanabilir oldugunu test eder,")
     public void blogsMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.Blogs.isDisplayed() &&
-                anasayfaUstBarPage.Blogs.isEnabled(), "Blogs menü tıklanabilir değil.");    }
+        Assertions.assertTrue(senaPage.Blogs.isDisplayed() &&
+                senaPage.Blogs.isEnabled(), "Blogs menü tıklanabilir değil.");    }
 
     @When("About menü başlıgının tiklanabilir oldugunu test eder,")
     public void aboutMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.About.isDisplayed() &&
-                anasayfaUstBarPage.About.isEnabled(), "About menü tıklanabilir değil.");    }
+        Assertions.assertTrue(senaPage.About.isDisplayed() &&
+                senaPage.About.isEnabled(), "About menü tıklanabilir değil.");    }
 
     @When("FAQ menü başlıgının tiklanabilir oldugunu test eder,")
     public void faqMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.FAQ.isDisplayed() &&
-                anasayfaUstBarPage.FAQ.isEnabled(), "FAQ menü tıklanabilir değil.");
+        Assertions.assertTrue(senaPage.FAQ.isDisplayed() &&
+                senaPage.FAQ.isEnabled(), "FAQ menü tıklanabilir değil.");
     }
 
     @When("Contact menü başlıgının tiklanabilir oldugunu test eder,")
     public void contactMenüBaşlıgınınTiklanabilirOldugunuTestEder() {
 
-        Assertions.assertTrue(anasayfaUstBarPage.Contact.isDisplayed() &&
-                anasayfaUstBarPage.Contact.isEnabled(), "Contact menü tıklanabilir değil.");    }
+        Assertions.assertTrue(senaPage.Contact.isDisplayed() &&
+                senaPage.Contact.isEnabled(), "Contact menü tıklanabilir değil.");    }
 
 
     @When("Home menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void homeMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.Home.click();
+        senaPage.Home.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -143,7 +143,7 @@ public class AnasayfaUstBar {
     @When("Pricing menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void pricingMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.Pricing.click();
+        senaPage.Pricing.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/#pricing"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -154,7 +154,7 @@ public class AnasayfaUstBar {
     @When("Tracking menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void trackingMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.Tracking.click();
+        senaPage.Tracking.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/tracking"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -165,7 +165,7 @@ public class AnasayfaUstBar {
     @When("Blogs menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void blogsMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.Blogs.click();
+        senaPage.Blogs.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/get-blogs"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -176,7 +176,7 @@ public class AnasayfaUstBar {
     @When("About menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void aboutMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.About.click();
+        senaPage.About.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/about-us"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -187,7 +187,7 @@ public class AnasayfaUstBar {
     @When("FAQ menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void faqMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.FAQ.click();
+        senaPage.FAQ.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/faq-list"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -198,7 +198,7 @@ public class AnasayfaUstBar {
     @When("Contact menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,")
     public void contactMenüBaşlığınaTıklarYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
 
-        anasayfaUstBarPage.Contact.click();
+        senaPage.Contact.click();
         String expectedUrl = "https://qa.agileswiftcargo.com/contact-send"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
@@ -208,17 +208,17 @@ public class AnasayfaUstBar {
 
     @Given("Blogs menü başlığına tıklar,")
     public void blogs_menü_başlığına_tıklar() {
-        anasayfaUstBarPage.Blogs.click();
+        senaPage.Blogs.click();
     }
     @When("Acilan sayfada bulunan ilk blog yazisinin basligini kaydeder ve basliga tiklar,")
     public void acilan_sayfada_bulunan_ilk_blog_yazisinin_basligini_kaydeder_ve_basliga_tiklar() {
-        ilkBlogYazisiBasligi = anasayfaUstBarPage.ilkBlogYazisiBasligi.getText();
+        ilkBlogYazisiBasligi = senaPage.ilkBlogYazisiBasligi.getText();
         System.out.println(ilkBlogYazisiBasligi);
-        anasayfaUstBarPage.ilkBlogYazisiBasligi.click();
+        senaPage.ilkBlogYazisiBasligi.click();
     }
     @Then("Yönlendirildiği sayfadaki blog yazısının başlığı ile kaydettigi basligin ayni oldugunu test eder,")
     public void yönlendirildiği_sayfadaki_blog_yazısının_başlığı_ile_kaydettigi_basligin_ayni_oldugunu_test_eder() {
-        yonlendirilenSayfaBlogYazisiBasligi = anasayfaUstBarPage.yonlendirilenBlogSayfasiBlogYazisiBasligi.getText();
+        yonlendirilenSayfaBlogYazisiBasligi = senaPage.yonlendirilenBlogSayfasiBlogYazisiBasligi.getText();
         System.out.println(yonlendirilenSayfaBlogYazisiBasligi);
 
         Assertions.assertEquals(ilkBlogYazisiBasligi,yonlendirilenSayfaBlogYazisiBasligi);
@@ -226,12 +226,12 @@ public class AnasayfaUstBar {
 
     @When("Acilan sayfada bulunan ilk blog yazisinin gorunurluk sayisini kaydeder,")
     public void acilan_sayfada_bulunan_ilk_blog_yazisinin_gorunurluk_sayisini_kaydeder() {
-        ilkGorunurlukSayisi = Integer.parseInt(anasayfaUstBarPage.blogYazisiIlkGorunurlukSayisi.getText());
+        ilkGorunurlukSayisi = Integer.parseInt(senaPage.blogYazisiIlkGorunurlukSayisi.getText());
     }
     @When("Blog yazisina tiklar ve acilan sayfadaki gorunurluk sayisini kaydeder,")
     public void blog_yazisina_tiklar_ve_acilan_sayfadaki_gorunurluk_sayisini_kaydeder() {
-        anasayfaUstBarPage.ilkBlogYazisiBasligi.click();
-        guncelGorunurlukSayisi =Integer.parseInt(anasayfaUstBarPage.blogYazisiGuncelGorunurlukSayisi.getText());
+        senaPage.ilkBlogYazisiBasligi.click();
+        guncelGorunurlukSayisi =Integer.parseInt(senaPage.blogYazisiGuncelGorunurlukSayisi.getText());
     }
     @Then("Blog yazisina tikladiktan sonra kaydedilen gorunurluk sayisinin, ilk gorunurluk sayisindan buyuk oldugunu test eder,")
     public void blog_yazisina_tikladiktan_sonra_kaydedilen_gorunurluk_sayisinin_ilk_gorunurluk_sayisindan_buyuk_oldugunu_test_eder() {
@@ -240,25 +240,25 @@ public class AnasayfaUstBar {
 
     @When("Acilan sayfada bulunan ilk blog yazisinin basligina tiklar,")
     public void acilan_sayfada_bulunan_ilk_blog_yazisinin_basligina_tiklar() {
-        anasayfaUstBarPage.ilkBlogYazisiBasligi.click();
+        senaPage.ilkBlogYazisiBasligi.click();
     }
     @When("Acilan sayfada Latest Blogs basliginin gorunur oldugunu test eder,")
     public void acilan_sayfada_latest_blogs_basliginin_gorunur_oldugunu_test_eder(){
-        anasayfaUstBarPage.latestBlogsBasligi.isDisplayed();
+        senaPage.latestBlogsBasligi.isDisplayed();
     }
     @Then("Latest Blogs basligi altinda bulunan bir blog yazisinin basligini kaydeder,")
     public void latest_blogs_basligi_altinda_bulunan_bir_blog_yazisinin_basligini_kaydeder() {
-       latestBlogsYazisiBasligi = anasayfaUstBarPage.latestBlogsYazisiBasligi.getText().replaceAll("[^a-zA]", "");
+       latestBlogsYazisiBasligi = senaPage.latestBlogsYazisiBasligi.getText().replaceAll("[^a-zA]", "");
        System.out.println(latestBlogsYazisiBasligi);
 
     }
     @When("Basligi kaydedilen blog yazisina tiklar,")
     public void basligiKaydedilenBlogYazisinaTiklar() {
-        anasayfaUstBarPage.latestBlogsYazisi.click();
+        senaPage.latestBlogsYazisi.click();
     }
     @Then("Yonlendirilen sayfada bulunan basligi kaydeder ve tiklanilan blog yazisi basligi ile ayni oldugunu test eder,")
     public void yonlendirilen_sayfada_bulunan_basligi_kaydeder_ve_tiklanilan_blog_yazisi_basligi_ile_ayni_oldugunu_test_eder() {
-        acilanLatestBlogsYazisiBasligi = anasayfaUstBarPage.acilanLatestBlogsYazisiBasligi.getText().replaceAll("[^a-zA]", "");
+        acilanLatestBlogsYazisiBasligi = senaPage.acilanLatestBlogsYazisiBasligi.getText().replaceAll("[^a-zA]", "");
         Assertions.assertTrue((acilanLatestBlogsYazisiBasligi).contains(latestBlogsYazisiBasligi));
     }
 
