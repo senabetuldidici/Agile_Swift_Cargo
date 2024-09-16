@@ -1,10 +1,7 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -149,6 +146,13 @@ public class ReusableMethods {
             }
             return result;
         }
+
+
+    public static void scrollWithUiScrollableAndClick(String elementText) {
+        WebDriver driver =  Driver.getDriver();
+
+        driver.findElement(By.xpath("//*[text()='Sign in']")).click();
+    }
 
 }
 
