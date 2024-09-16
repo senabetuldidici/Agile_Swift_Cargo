@@ -11,7 +11,7 @@ public class SenaPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[@class='container flex-lg-row flex-nowrap align-items-center']")
+    @FindBy(xpath = "//*[@class='container flgit bex-lg-row flex-nowrap align-items-center']")
     public WebElement ustBar;
 
     @FindBy(xpath = "(//*[@class='nav-item'])[1]")
