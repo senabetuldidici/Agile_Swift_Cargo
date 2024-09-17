@@ -1,8 +1,8 @@
-Feature: US001 Anasayfa ust bar ogeleri testi
+Feature: US001 Home top bar elements test
 
-  Scenario: TC01 Menü başlıklarının görünür olmasi
+  Scenario: TC01 Visibility of menu titles
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And 2 saniye bekler
     When ana sayfa üst barını kontrol eder
     And 2 saniye bekler
@@ -16,9 +16,9 @@ Feature: US001 Anasayfa ust bar ogeleri testi
 
 
 
-  Scenario: TC02 Menü başlıklarının tiklanabilir olmasi
+  Scenario: TC02 Menu headings are clickable
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And 2 saniye bekler
     When Home menü başlıgının tiklanabilir oldugunu test eder,
     And Pricing menü başlıgının tiklanabilir oldugunu test eder,
@@ -29,8 +29,8 @@ Feature: US001 Anasayfa ust bar ogeleri testi
     And Contact menü başlıgının tiklanabilir oldugunu test eder,
 
 
-  Scenario: TC02 Menü başlıklarının tiklanabilir olmasi
-    Given kullanici "toUrl" sitesine gider
+  Scenario: TC03 Correct orientation of menu headings
+    Given kullanıcı "toUrl" sitesine gider
     And 2 saniye bekler
     When Home menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,
     And Pricing menü başlığına tıklar, yönlendirilen sayfanın URL'sinin dogrulugunu test eder,

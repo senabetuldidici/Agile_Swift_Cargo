@@ -2,7 +2,7 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
 
   Scenario: TC01 Payout bağlantısının görünür ve tıklanabilir olmasi
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
     Then marchant dashboard sayfasina erisim saglar
     And 2 saniye bekler
@@ -13,7 +13,7 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
 
   Scenario: TC02 Payout bağlantısına tıklandıktan sonra yönlendirme
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
     Then marchant dashboard sayfasina erisim saglar
     And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
@@ -23,7 +23,7 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
 
   Scenario: TC03 Payout List görüntülenmesi
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
     Then marchant dashboard sayfasina erisim saglar
     And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
@@ -33,7 +33,7 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
 
   Scenario: TC04 Stripe bağlantısının görünür ve tıklanabilir olmasi
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
     Then marchant dashboard sayfasina erisim saglar
     And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
@@ -43,7 +43,7 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
 
   Scenario: TC05 Stripe Payout Details alanında textbox'ların görüntülenmesi ve veri girilebilmesi
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
     Then marchant dashboard sayfasina erisim saglar
     And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
@@ -57,7 +57,7 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
 
   Scenario: TC06 Pay Now butonu ve Merchant Payment penceresinin açılması
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
     Then marchant dashboard sayfasina erisim saglar
     And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
