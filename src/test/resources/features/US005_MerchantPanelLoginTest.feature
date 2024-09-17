@@ -12,3 +12,5 @@ Feature: US005 Merchant Paneli Login Testi
     And Sing in butonuna tıklar
     Then basarılı bir giris yapabildiğini test eder
     And sayfayı kapatir
+
+

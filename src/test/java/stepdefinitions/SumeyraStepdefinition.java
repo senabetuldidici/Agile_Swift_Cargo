@@ -64,5 +64,6 @@ public class SumeyraStepdefinition {
     public void basarılıBirGirisYapabildiğiniTestEder() {
     Assertions.assertTrue(sumeyraPage.marchantDashboard.isDisplayed());
 
+
     }
 }
