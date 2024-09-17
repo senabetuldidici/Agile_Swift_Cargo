@@ -51,6 +51,7 @@ public class SumeyraStepdefinition {
     }
 
 
+
     @And("sayfayı kapatir")
     public void sayfayıKapatir() { Driver.quitDriver();  // Tarayıcı kapanır
     }
