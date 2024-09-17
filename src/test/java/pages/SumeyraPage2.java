@@ -1,4 +1,4 @@
 package pages;
 
-public class SumeyraPage2 git {
+public class SumeyraPage2 {
 }
