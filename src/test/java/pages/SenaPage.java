@@ -77,9 +77,14 @@ public class SenaPage {
     @FindBy (xpath = "//*[@aria-controls='accounts']")
     public WebElement accountsBasligi;
 
-    @FindBy (xpath = "(//*[@class='nav-link active'])[2]")
+    @FindBy (xpath = "(//a[@href='https://qa.agileswiftcargo.com/merchant/online-payment'])[2]")
     public WebElement payoutButonu;
 
+    @FindBy (xpath = "(//*[@class='h3'])[2]")
+    public WebElement payoutListBasligi;
+
+    @FindBy (xpath = "//*[@alt='stripe.png']")
+    public WebElement stripeButonu;
 
 }
 

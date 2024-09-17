@@ -293,4 +293,18 @@ public class SenaStepdefinitons {
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
                 "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
     }
+
+    @Then("Payout sayfasinda Payout List bolumunun gorunur oldugunu test eder")
+    public void payoutSayfasindaPayoutListBolumununGorunurOldugunuTestEder() {
+
+        senaPage.payoutListBasligi.isDisplayed();
+    }
+
+    @Then("Payout sayfasinda Stripe bolumunun gorunur ve tiklanabilir oldugunu test eder")
+    public void payoutSayfasindaStripeBolumununGorunurVeTiklanabilirOldugunuTestEder() {
+
+        senaPage.stripeButonu.isDisplayed();
+        senaPage.stripeButonu.click();
+
+    }
 }
