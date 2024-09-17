@@ -5,14 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import pages.SumeyraPage;
+import pages.SumeyraPage2;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class SumeyraStepdefinition {
+public class sumeyraStepDefinitions {
 
-    SumeyraPage sumeyraPage = new SumeyraPage();
+    SumeyraPage2 sumeyraPage = new SumeyraPage2();
 
     @Given("kullanıcı {string} sitesine gider")
     public void kullanıcıSitesineGider(String arg0) {
@@ -35,7 +35,7 @@ public class SumeyraStepdefinition {
     public void emailOlarakGirer(String merchantGecerliEmail) {
         sumeyraPage.emailKutusu.sendKeys(ConfigReader.getProperty("merchantGecerliEmail"));
     }
-    
+
     @And("password kutusunun görünür oldugunu test eder")
     public void passwordKutusununGörünürOldugunuTestEder() {
         Assertions.assertTrue(sumeyraPage.sifreKutusu.isDisplayed());
@@ -63,8 +63,9 @@ public class SumeyraStepdefinition {
 
     @Then("basarılı bir giris yapabildiğini test eder")
     public void basarılıBirGirisYapabildiğiniTestEder() {
-    Assertions.assertTrue(sumeyraPage.marchantDashboard.isDisplayed());
+        Assertions.assertTrue(sumeyraPage.marchantDashboard.isDisplayed());
 
 
     }
 }
+
