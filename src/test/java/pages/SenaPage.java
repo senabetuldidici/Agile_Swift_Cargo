@@ -77,7 +77,7 @@ public class SenaPage {
     @FindBy (xpath = "//*[@aria-controls='accounts']")
     public WebElement accountsBasligi;
 
-    @FindBy (xpath = "(//*[@class='nav-link '])[4]")
+    @FindBy (xpath = "(//*[@class='nav-link active'])[2]")
     public WebElement payoutButonu;
 
 
