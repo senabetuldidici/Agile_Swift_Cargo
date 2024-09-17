@@ -9,3 +9,14 @@ Feature: US023 Gider verilerine erisim ve odeme yapma testi
     And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
     And  Accounts basligi altinda yer alan 'Payout' baglantisinin gorunur ve tiklanabilir oldugunu test eder
     And  sayfayi kapatir
+
+
+  Scenario: TC02 Payout bağlantısına tıklandıktan sonra yönlendirme
+
+    Given kullanici "toUrl" sitesine gider
+    When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
+    Then marchant dashboard sayfasina erisim saglar
+    And  sol tarafta bulunan menude 'Accounts' basliginin gorunur ve tiklanabilir oldugunu test eder
+    And  Accounts basligi altinda yer alan 'Payout' baglantisinin gorunur ve tiklanabilir oldugunu test eder
+    When Payout basligina tiklar ve yonlendirilen sitenin Url'sinin dogrulugunu test eder
+    And  sayfayi kapatir
