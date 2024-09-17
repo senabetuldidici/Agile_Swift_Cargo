@@ -6,6 +6,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.SenaPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -306,5 +308,38 @@ public class SenaStepdefinitons {
         senaPage.stripeButonu.isDisplayed();
         senaPage.stripeButonu.click();
 
+    }
+
+    @When("Stripe bolumunde var olan To Account ve Amount \\(USD) textboxlarinin gorunur olmasini testeder")
+    public void stripeBolumundeVarOlanToAccountVeAmountUSDTextboxlarininGorunurOlmasiniVeVeriGirilebilmesiniTesteder() {
+        senaPage.toAccountBasligi.isDisplayed();
+
+        senaPage.amountBasligi.isDisplayed();
+
+    }
+
+    @Then("To Account textboxta cikan ilk secenegin secilebilir oldugunu test eder")
+    public void toAccountTextboxtaCikanIlkSeceneginSecilebilirOldugunuTestEder() {
+        senaPage.toAccountSecenekBox.click();
+        senaPage.toAccountIlkSecenek.click();
+    }
+
+    @And("Amount \\(USD) textboxa integer veri girilebildigini test eder")
+    public void amountUSDTextboxaIntegerVeriGirilebildiginiTestEder() {
+        senaPage.amountTextBox.sendKeys("100");
+    }
+
+    @Then("PayNow butonuna tiklanabildigini test eder")
+    public void paynowButonunaTiklanabildiginiTestEder() {
+        senaPage.payNowButonu.click();
+    }
+
+    @And("Merchant Payment penceresinin açıldığını test eder")
+    public void merchantPaymentPenceresininAçıldığınıTestEder() {
+
+        WebElement merchantPaymentIframe = driver.findElement(By.xpath("(//iframe)[1]"));
+        driver.switchTo().frame(merchantPaymentIframe);
+
+        Assertions.assertTrue(senaPage.merchantPaymentEkrani.isDisplayed());
     }
 }

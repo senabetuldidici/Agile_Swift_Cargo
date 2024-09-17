@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -85,6 +86,28 @@ public class SenaPage {
 
     @FindBy (xpath = "//*[@alt='stripe.png']")
     public WebElement stripeButonu;
+
+    @FindBy (xpath = "//*[@for='accountId']")
+    public WebElement toAccountBasligi;
+
+    @FindBy(xpath = "//*[@id='accountId']")
+    public WebElement toAccountSecenekBox;
+
+    @FindBy(xpath = "//option[@value='201']")
+    public WebElement toAccountIlkSecenek;
+
+    @FindBy (xpath = "(//label)[13]")
+    public WebElement amountBasligi;
+
+    @FindBy (xpath = "//*[@id='stripe_amount']")
+    public WebElement amountTextBox;
+
+    @FindBy (xpath = "//*[@class = 'btn btn-primary btn-block']")
+    public WebElement payNowButonu;
+
+    @FindBy (xpath = "//h2[text()='Merchant Payment']")
+    public WebElement merchantPaymentEkrani;
+    //h2[text()='Merchant Payment']
 
 }
 
