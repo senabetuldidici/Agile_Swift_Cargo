@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Agile_Swift_Cargo" />
         <module name="senadeneme" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Agile_Swift_Cargo" target="18" />
+      <module name="Agile_Swift_Cargo" target="17" />
+      <module name="senadeneme" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
