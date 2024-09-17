@@ -86,7 +86,7 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                    </execution>
+                    </execution>git branc
                 </executions>
             </plugin>
             <plugin>
