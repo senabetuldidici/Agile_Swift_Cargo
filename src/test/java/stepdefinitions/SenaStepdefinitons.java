@@ -285,4 +285,12 @@ public class SenaStepdefinitons {
         senaPage.payoutButonu.click();
     }
 
+    @When("Payout basligina tiklar ve yonlendirilen sitenin Url'sinin dogrulugunu test eder")
+    public void payoutBasliginaTiklarVeYonlendirilenSiteninUrlSininDogrulugunuTestEder() {
+        senaPage.payoutButonu.click();
+        String expectedUrl = "https://qa.agileswiftcargo.com/merchant/online-payment"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+    }
 }
