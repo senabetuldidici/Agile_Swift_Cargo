@@ -6,6 +6,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.SenaPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -27,7 +29,7 @@ public class SenaStepdefinitons {
     static String acilanLatestBlogsYazisiBasligi;
 
 
-    @Given("kullanici {string} sitesine gider")
+    @Given("kullanıcı {string} sitesine gider")
     public void kullanici_sitesine_gider(String string) {
         Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
     }
@@ -245,7 +247,7 @@ public class SenaStepdefinitons {
     }
     @When("Acilan sayfada Latest Blogs basliginin gorunur oldugunu test eder,")
     public void acilan_sayfada_latest_blogs_basliginin_gorunur_oldugunu_test_eder(){
-        senaPage.latestBlogsBasligi.isDisplayed();
+        Assertions.assertTrue(senaPage.latestBlogsBasligi.isDisplayed());
     }
     @Then("Latest Blogs basligi altinda bulunan bir blog yazisinin basligini kaydeder,")
     public void latest_blogs_basligi_altinda_bulunan_bir_blog_yazisinin_basligini_kaydeder() {
@@ -272,16 +274,16 @@ public class SenaStepdefinitons {
     }
     @Then("marchant dashboard sayfasina erisim saglar")
     public void marchant_dashboard_sayfasina_erisim_saglar() {
-        senaPage.marchantDashboardAnasayfaBasligi.isDisplayed();
+        Assertions.assertTrue(senaPage.marchantDashboardAnasayfaBasligi.isDisplayed());
     }
     @Then("sol tarafta bulunan menude {string} basliginin gorunur ve tiklanabilir oldugunu test eder")
     public void sol_tarafta_bulunan_menude_basliginin_gorunur_ve_tiklanabilir_oldugunu_test_eder(String string) {
-        senaPage.accountsBasligi.isDisplayed();
+        Assertions.assertTrue(senaPage.accountsBasligi.isDisplayed());
         senaPage.accountsBasligi.click();
     }
     @Then("Accounts basligi altinda yer alan {string} baglantisinin gorunur ve tiklanabilir oldugunu test eder")
     public void accounts_basligi_altinda_yer_alan_baglantisinin_gorunur_ve_tiklanabilir_oldugunu_test_eder(String string) {
-        senaPage.payoutButonu.isDisplayed();
+        Assertions.assertTrue(senaPage.payoutButonu.isDisplayed());
         senaPage.payoutButonu.click();
     }
 
@@ -293,4 +295,54 @@ public class SenaStepdefinitons {
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
                 "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
     }
+
+    @Then("Payout sayfasinda Payout List bolumunun gorunur oldugunu test eder")
+    public void payoutSayfasindaPayoutListBolumununGorunurOldugunuTestEder() {
+
+        Assertions.assertTrue(senaPage.payoutListBasligi.isDisplayed());
+    }
+
+    @Then("Payout sayfasinda Stripe bolumunun gorunur ve tiklanabilir oldugunu test eder")
+    public void payoutSayfasindaStripeBolumununGorunurVeTiklanabilirOldugunuTestEder() {
+
+        Assertions.assertTrue(senaPage.stripeButonu.isDisplayed());
+        senaPage.stripeButonu.click();
+
+    }
+
+    @When("Stripe bolumunde var olan To Account ve Amount \\(USD) textboxlarinin gorunur olmasini testeder")
+    public void stripeBolumundeVarOlanToAccountVeAmountUSDTextboxlarininGorunurOlmasiniVeVeriGirilebilmesiniTesteder() {
+       Assertions.assertTrue(senaPage.toAccountBasligi.isDisplayed());
+
+        Assertions.assertTrue(senaPage.amountBasligi.isDisplayed());
+
+    }
+
+    @Then("To Account textboxta cikan ilk secenegin secilebilir oldugunu test eder")
+    public void toAccountTextboxtaCikanIlkSeceneginSecilebilirOldugunuTestEder() {
+        senaPage.toAccountSecenekBox.click();
+        senaPage.toAccountIlkSecenek.click();
+    }
+
+    @And("Amount \\(USD) textboxa integer veri girilebildigini test eder")
+    public void amountUSDTextboxaIntegerVeriGirilebildiginiTestEder() {
+
+        senaPage.amountTextBox.sendKeys("100");
+    }
+
+    @Then("PayNow butonuna tiklanabildigini test eder")
+    public void paynowButonunaTiklanabildiginiTestEder() {
+
+        senaPage.payNowButonu.click();
+    }
+
+    @And("Merchant Payment penceresinin açıldığını test eder")
+    public void merchantPaymentPenceresininAçıldığınıTestEder() {
+
+        WebElement merchantPaymentIframe = driver.findElement(By.xpath("(//iframe)[1]"));
+        driver.switchTo().frame(merchantPaymentIframe);
+
+        Assertions.assertTrue(senaPage.merchantPaymentEkrani.isDisplayed());
+    }
+
 }
