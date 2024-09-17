@@ -140,9 +140,40 @@ public class US018_Stepdefinitions {
         }
 
 
+    @Then("As the user clicks the {string} heading in the menu on the left.")
+    public void as_the_user_clicks_the_heading_in_the_menu_on_the_left(String string) {
+            cimenPage.settingsButton.click();
+    }
+    @Then("As the user checks that the {string} link is visible and clickable under {string}.")
+    public void as_the_user_checks_that_the_link_is_visible_and_clickable_under(String string, String string2) {
+        Assertions.assertTrue(cimenPage.deliverycharges.isDisplayed());
+        Assertions.assertTrue(cimenPage.deliverycharges.isSelected());
+    }
 
+
+    @Then("As the user clicks the {string} link in the left menu.")
+    public void as_the_user_clicks_the_link_in_the_left_menu(String string) {
+        cimenPage.deliverycharges.click();
+    }
+    @Then("As the user checks whether the redirected page is loaded correctly \\(title and URL check).")
+    public void as_the_user_checks_whether_the_redirected_page_is_loaded_correctly_title_and_url_check() {
+       String exceptedUrl="https://qa.agileswiftcargo.com/merchant/settings/delivery-charges";
+       String actualUrl=Driver.driver.getCurrentUrl();
+       Assertions.assertEquals(exceptedUrl,actualUrl);
+        String exceptedTitle="Delivery Charge";
+        String actualTitle=Driver.driver.getTitle();
+    }
+    @Then("As the user checks whether the data in the list")
+    public void as_the_user_checks_whether_the_data_in_the_list_category() {
 
     }
+
+
+
+
+
+
+}
 
 
 

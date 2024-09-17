@@ -128,6 +128,19 @@ public class CimenPage {
 
     }
 
+    @FindBy(xpath ="//*[@id='settings']")
+    public WebElement settingsButton;
+
+
+    @FindBy(xpath = "//*[text()='Delivery Charges']")
+    public WebElement deliverycharges;
+
+
+    @FindBy(xpath = "/html/body/div/main/div/div[1]/div[2]/div/div/div[1]/div/p")
+    public WebElement deliverychargeText;
+
+    @FindBy(xpath = " //*[@class='table-responsive']//th[2]")
+    public WebElement weight;
 
 
 
