@@ -43,4 +43,41 @@ public class UlviPage {
 
     @FindBy(xpath = "//*[text()='  Invoice List ']")
     public WebElement InvoiceListText;
+
+    //--- US_027 TC
+    @FindBy(xpath = "//*[@class='dropdown-toggle nav-link auth-btn show']")
+    public WebElement MerchantFirstNameLastAfterLogin;
+
+    @FindBy(xpath = "//*[@class='fa fa-home']")
+    public WebElement dropDownHomeIcon;
+    @FindBy(xpath = "(//*[text()='Reports'])[2]")
+    public WebElement ReportsButtonOnMerchant;
+
+    @FindBy(xpath = "(//*[text()='Parcel Status Reports'])[2]")
+    public WebElement parcelStatusReportsButtonOnMerchant;
+
+    @FindBy(xpath = "//*[@id='date']")
+    public WebElement parcelStatusReportsDateInput;
+
+    @FindBy(xpath = "//*[text()='Last 7 Days']")
+    public WebElement dateLast7Days;
+
+    @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']")
+    public WebElement getParcelStatusReportsStatusInput;
+    @FindBy(xpath = "(//*[text()='Pending'])[2]")
+    public WebElement statusPending;
+
+    @FindBy(xpath = "//*[text()=' Filter']")
+    public WebElement ReportsFilterButton;
+
+    @FindBy(xpath = "//*[text()='Export']")
+    public WebElement exportButton;
+
+    @FindBy(xpath = "//*[text()='Print']")
+    public WebElement printtButton;
+
+    @FindBy(xpath = "//h3[text()='Parcel Status Reports']")
+    public WebElement AfterFilterValidationText;
+
+
 }
