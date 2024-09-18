@@ -17,20 +17,5 @@ import org.junit.platform.suite.api.Suite;
 
 
 public class Runner {
-    /*
-        Cucumber'da istenen feature/Scenario'lari celistirmak icin kullandigimiz
-        Runner class'i BOS bir class'dir.
 
-        Istedigimiz class'lari belirlemek,
-        calisan class'lara rapor eklemek
-        ve feature dosyalari ile stepdefinitions class'larini irtibatlandirmak icin
-        notasyonlar kullanacagiz
-
-
-        dry run = true secildiginde kodlari calistirmaya gayret etmez
-                       SADECE eksik adim var mi diye kontrol eder
-                       ve varsa eksik adimlari bizim icin olusturur
-                       Eksik adim yoksa KODLARI CALISTIRMAZ,
-                       eksik adim kalmadigini soylemek icin test passed yazdirir
-     */
 }
