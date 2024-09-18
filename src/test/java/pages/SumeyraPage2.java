@@ -28,4 +28,46 @@ public class SumeyraPage2 {
 
     @FindBy (xpath = "//*[@class='h3 d-inline']")
     public WebElement marchantDashboard;
+
+    @FindBy(xpath = "//*[@class='footer-link']")
+    public WebElement SingUphere;
+
+    @FindBy(id ="business_name")
+    public WebElement businessnameKutusu;
+
+    @FindBy(id ="full_name")
+    public WebElement fullNameKutusu;
+
+    @FindBy(id ="mobile")
+    public WebElement mobileText;
+
+    @FindBy(id ="password")
+    public WebElement passwordKutusu;
+
+    @FindBy(id ="address")
+    public WebElement addressKutusu;
+
+    @FindBy(id ="merchant_registration_checkbox")
+    public WebElement registrationCheckbox;
+
+    @FindBy(id ="merchant_registration_submit")
+    public WebElement registerButton;
+
+
+    @FindBy(xpath = "//*[text()='Forgot Password']")
+    public WebElement ForgotPasswordLink;
+
+
+    @FindBy(xpath = "//*[@class='form-control form-control-lg ']")
+    public WebElement EmailAdressKutusu;
+
+
+    @FindBy(xpath = "//*[@class='btn btn-block btn-primary btn-xl']")
+    public WebElement PasswordResetLinkButonu;
+
+    @FindBy(xpath = "//*[@class='alert alert-success']")
+    public WebElement basarılıResetLinkyazısı;
+
+
+
 }
