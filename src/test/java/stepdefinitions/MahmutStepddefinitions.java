@@ -56,6 +56,8 @@ public class MahmutStepddefinitions {
     public void succesfully_change_password_uyarisini_alir() {
         ReusableMethods.bekle(1);
         Assertions.assertTrue(mahmutPage.passwordSuccessfullyUpdatedYazisi.isDisplayed());
+        Driver.quitDriver();
+
 
     }
 }
