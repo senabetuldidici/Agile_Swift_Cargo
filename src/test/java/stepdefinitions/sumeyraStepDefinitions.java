@@ -14,10 +14,6 @@ public class sumeyraStepDefinitions {
 
     SumeyraPage2 sumeyraPage = new SumeyraPage2();
 
-    @Given("kullanıcı {string} sitesine gider")
-    public void kullanıcıSitesineGider(String arg0) {
-        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
-    }
 
 
     @When("login butonuna  basar")
