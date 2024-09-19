@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class SenaPage {
 
-    public SenaPage(){
+     public SenaPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
