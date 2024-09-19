@@ -10,8 +10,6 @@ public class SumeyraPage2 {
     public SumeyraPage2(){
         PageFactory.initElements(Driver.getDriver(),this);}
 
-    @FindBy(xpath = "(//*[@class='nav-item'])[1]")
-    public WebElement Home;
 
     @FindBy(xpath = "//*[@class='nav-link auth-btn']")
     public WebElement loginButonu;
@@ -105,9 +103,32 @@ public class SumeyraPage2 {
     @FindBy(xpath = "//*[text()='All Reports']")
     public static WebElement allReports;
 
-
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/p\n")
     public static WebElement allReportsText;
+
+    //Social ikonlar
+
+    @FindBy(xpath = "//*[@class='icon  fab fa-linkedin']")
+    public WebElement Linkedinikonu;
+
+    @FindBy(xpath = "//*[@class='icon  fab fa-facebook-square']")
+    public WebElement Facebookikonu;
+
+    @FindBy(xpath = "//*[@class='icon  fab fa-instagram']")
+    public WebElement Instagramikonu;
+
+    @FindBy(xpath = "//*[@class='icon  fab fa-youtube']")
+    public WebElement Youtubeikonu;
+
+    @FindBy(xpath = "//*[@class='icon  fab fa-youtube']")
+    public WebElement Skypeikonu;
+
+
+    //Our Services
+
+    @FindBy(xpath = "//*[text()='Our Services']")
+    public WebElement ourServicesBaslıgı;
+
 
 
 }

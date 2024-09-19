@@ -238,7 +238,7 @@ public class sumeyraStepDefinitions {
 
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
-        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", SumeyraPage2.allReports);
+        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", sumeyraPage.allReports);
 
     }
 
@@ -253,6 +253,97 @@ public class sumeyraStepDefinitions {
         sumeyraPage.dashboardBaslıgı.click();
 
         String expectedUrl = "https://qa.agileswiftcargo.com/"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+    }
+
+
+    @When("linkedin simgesinin görünür oldugunu test eder")
+    public void linkedinSimgesininGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.Linkedinikonu.isDisplayed());
+
+    }
+
+    @And("linkedin simgesine tıklanır, yönlendirilen sayfanın URL'sinin dogrulugunu test eder")
+    public void linkedinSimgesineTıklanırYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
+
+        sumeyraPage.Linkedinikonu.click();
+
+        String expectedUrl = "https://www.linkedin.com/"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+
+    }
+
+    @And("Simgeleri görebilecek sekilde sayfayı asagı kaydırır")
+    public void simgeleriGörebilecekSekildeSayfayıAsagıKaydırır() {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+
+        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", sumeyraPage.Linkedinikonu);
+    }
+
+    @When("Facebook simgesinin görünür oldugunu test eder")
+    public void facebookSimgesininGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.Facebookikonu.isDisplayed());
+    }
+
+    @And("Facebook simgesine tıklanır, yönlendirilen sayfanın URL'sinin dogrulugunu test eder")
+    public void facebookSimgesineTıklanırYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
+        sumeyraPage.Facebookikonu.click();
+
+        String expectedUrl = "https://www.facebook.com/"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+
+
+    }
+
+    @When("instagram simgesinin görünür oldugunu test eder")
+    public void instagramSimgesininGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.Instagramikonu.isDisplayed());
+
+    }
+
+    @And("instagram simgesine tıklanır, yönlendirilen sayfanın URL'sinin dogrulugunu test eder")
+    public void instagramSimgesineTıklanırYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
+        sumeyraPage.Instagramikonu.click();
+
+        String expectedUrl = "https://www.instagram.com/"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+
+    }
+
+    @When("Youtube simgesinin görünür oldugunu test eder")
+    public void youtubeSimgesininGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.Youtubeikonu.isDisplayed());
+    }
+
+    @And("Youtube simgesine tıklanır, yönlendirilen sayfanın URL'sinin dogrulugunu test eder")
+    public void youtubeSimgesineTıklanırYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
+        sumeyraPage.Youtubeikonu.click();
+
+        String expectedUrl = "https://www.youtube.com/"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+    }
+
+    @When("Skype simgesinin görünür oldugunu test eder")
+    public void skypeSimgesininGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.Skypeikonu.isDisplayed());
+    }
+
+
+    @And("Skype simgesine tıklanır, yönlendirilen sayfanın URL'sinin dogrulugunu test eder")
+    public void skypeSimgesineTıklanırYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
+        sumeyraPage.Skypeikonu.click();
+
+        String expectedUrl = "https://www.skype.com/en/"; // Beklenen URL
         String actualUrl = driver.getCurrentUrl(); // Geçerli URL
         Assertions.assertTrue(actualUrl.contains(expectedUrl),
                 "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
