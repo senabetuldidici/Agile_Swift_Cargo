@@ -69,5 +69,45 @@ public class SumeyraPage2 {
     public WebElement basarılıResetLinkyazısı;
 
 
+// Merchant Dashboard locates
+    @FindBy(xpath = "//*[@class=\"nav-link \"][1]")
+    public WebElement dashboardBaslıgı ;
+
+    @FindBy(xpath = "/html/body/div/div[4]/ul/li[3]/a")
+    public WebElement ticketBaslıgı ;
+
+
+    @FindBy (xpath = "//*[@aria-controls='accounts']")
+    public WebElement accountsBasligi;
+
+    @FindBy (xpath = "/html/body/div/div[4]/ul/li[5]/a")
+    public WebElement parcelsBasligi;
+
+
+    @FindBy (xpath = "//*[@aria-controls=\"settings\"]")
+    public WebElement settingsBaslıgı;
+
+
+    @FindBy (xpath = "//*[@placeholder=\"Enter date\"]")
+    public WebElement enterDateText;
+
+    @FindBy (xpath = "//*[@id='date']")
+    public WebElement enterDateTextBox;
+
+
+    @FindBy (xpath = "//*[@class=\"btn btn-sm btn-primary group-btn\"]")
+    public WebElement filterButonu;
+
+
+    @FindBy(xpath = "//*[text()='Opps ! Something went wrong.']")
+    public WebElement OppsText;
+
+    @FindBy(xpath = "//*[text()='All Reports']")
+    public static WebElement allReports;
+
+
+    @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/p\n")
+    public static WebElement allReportsText;
+
 
 }
