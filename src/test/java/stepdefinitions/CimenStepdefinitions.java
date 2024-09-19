@@ -3,14 +3,18 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 import pages.CimenPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US018_Stepdefinitions {
+import static utilities.Driver.driver;
+
+public class CimenStepdefinitions {
 
     CimenPage cimenPage=new CimenPage();
+    JavascriptExecutor jse=(JavascriptExecutor) driver;
 
 
         static String hometextLine;
@@ -166,7 +170,164 @@ public class US018_Stepdefinitions {
     @Then("As the user checks whether the data in the list")
     public void as_the_user_checks_whether_the_data_in_the_list_category() {
 
+        Assertions.assertTrue(cimenPage.deliverycharges.isDisplayed());
     }
+
+    @When("As the user click on the AGILESWIFT CARGO logo")
+    public void as_the_user_click_on_the_agıleswıft_cargo_logo() {
+        cimenPage.loginAdminButton.click();
+        ReusableMethods.bekle(2);
+        Assertions.assertEquals(Driver.getDriver().getCurrentUrl(),ConfigReader.getProperty("toUrl"));
+    }
+
+    @When("As the user clicks Login")
+    public void as_the_user_clicks_login() {
+        cimenPage.login.click();
+    }
+    @Then("As the user checks whether the Enter Email or Mobile")
+    public void as_the_user_checks_whether_the_enter_email_or_mobile()  {
+
+        Assertions.assertTrue(cimenPage.emailText.isDisplayed());
+        Assertions.assertTrue(cimenPage.passwordText.isDisplayed());
+        Assertions.assertTrue(cimenPage.signUpHere.isDisplayed());
+        Assertions.assertTrue(cimenPage.signInButton.isDisplayed());
+
+
+
+        Assertions.assertTrue(cimenPage.emailText.isEnabled());
+        Assertions.assertTrue(cimenPage.passwordText.isEnabled());
+        Assertions.assertTrue(cimenPage.signUpHere.isEnabled());
+        Assertions.assertTrue(cimenPage.signInButton.isEnabled());
+
+
+
+
+    }
+    @Then("As the user enter valid password and email adddress and clicks Sign in.")
+    public void as_the_user_enter_valid_password_and_email_adddress_and_clicks_sign_in() {
+
+        cimenPage.loginMethodu(emailBox,passwordBox);
+
+    }
+
+    @When("As the user finds and clicks the Facebook button on the login page")
+    public void as_the_user_finds_and_clicks_the_facebook_button_on_the_login_page() {
+
+        Assertions.assertTrue(cimenPage.facebookLink.isDisplayed());
+        Assertions.assertTrue(cimenPage.facebookLink.isEnabled());
+        jse.executeScript("arguments[0].click();",cimenPage.facebookLink);
+
+
+
+    }
+    @Then("As the user sees facebook page when click the Facebook button.")
+    public void as_the_user_sees_facebook_page_when_click_the_facebook_button() {
+        String expectedLink="https://www.facebook.com/";
+        Assertions.assertEquals(expectedLink,Driver.getDriver().getCurrentUrl());
+    }
+
+    @When("As the user finds and clicks the Google button on the login page")
+    public void as_the_user_finds_and_clicks_the_google_button_on_the_login_page() {
+        Assertions.assertTrue(cimenPage.googleLink.isDisplayed());
+        Assertions.assertTrue(cimenPage.googleLink.isEnabled());
+        jse.executeScript("arguments[0].click();",cimenPage.googleLink);
+    }
+    @Then("As the user sees google page when click the google button.")
+    public void as_the_user_sees_google_page_when_click_the_google_button() {
+        String expectedLink="https://www.google.com/app-store/";
+        Assertions.assertEquals(expectedLink,Driver.getDriver().getCurrentUrl());
+    }
+
+
+    @When("As the user clicks Login and {string}")
+    public void as_the_user_clicks_login_and(String signup) {
+        cimenPage.login.click();
+        cimenPage.signUpHere.click();
+    }
+    @Then("As the user checks that the {string} ,{string}, {string}, {string}, {string}, {string}, {string}")
+    public void as_the_user_checks_that_the(String business, String full, String hub, String mobile, String password, String address, String register) {
+
+        Assertions.assertTrue(cimenPage.businessName.isDisplayed());
+        Assertions.assertTrue(cimenPage.fullName.isDisplayed());
+        Assertions.assertTrue(cimenPage.editHub.isDisplayed());
+        Assertions.assertTrue(cimenPage.mobile.isDisplayed());
+        Assertions.assertTrue(cimenPage.passwordBox.isDisplayed());
+        Assertions.assertTrue(cimenPage.addressBox.isDisplayed());
+        Assertions.assertTrue(cimenPage.registerButton.isDisplayed());
+
+
+
+    }
+
+    @Then("As the user checks that the {string} text box and the {string} button are visible.")
+    public void as_the_user_checks_that_the_text_box_and_the_button_are_visible(String string, String string2) {
+
+        Assertions.assertTrue(cimenPage.forgotButton.isDisplayed());
+        cimenPage.forgotButton.click();
+        Assertions.assertTrue(cimenPage.resetButton.isDisplayed());
+
+    }
+
+    @When("As the user clicks Login and <Forgot Password>")
+    public void as_the_user_clicks_login_and_forgot_password() {
+        cimenPage.login.click();
+        cimenPage.forgotButton.click();
+
+
+    }
+
+
+    @Then("As the user enters the valid email and clicks Send Password Reset Link' button.")
+    public void as_the_user_enters_the_valid_email_and_clicks_send_password_reset_link_button() {
+        cimenPage.emailEnter(emailBox);
+        String exceptedAlertYazisi=" We have emailed your password reset link! ";
+
+
+        Assertions.assertEquals(cimenPage.alertText.getText(),exceptedAlertYazisi);
+    }
+
+    @When("As the user clicks Login and enters the valid mail and password")
+    public void as_the_user_clicks_login_and_enters_the_valid_mail_and_password() {
+        cimenPage.login.click();
+        cimenPage.loginAdminMethodu(emailBox,passwordBox);
+    }
+    @Then("As the user access admin panel")
+    public void as_the_user_access_admin_panel() {
+
+        String excaptedURl="https://qa.agileswiftcargo.com/dashboard";
+        Assertions.assertEquals(driver.getCurrentUrl(),excaptedURl);
+
+    }
+
+
+
+
+
+
+
+    @Given("As the user opens the browser and enters the URL")
+    public void as_the_user_opens_the_browser_and_enters_the_url() {
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+
+    }
+    @Then("As the user verifies that the homepage is fully loaded successfully and {string} sees this title and logo")
+    public void as_the_user_verifies_that_the_homepage_is_fully_loaded_successfully_and_sees_this_title_and_logo(String hometextLine) {
+        String exceptedAramaSonucu="THE CONFIDENCE WE CARRY AROUND THE WORLD";
+
+        Assertions.assertEquals(exceptedAramaSonucu,hometextLine);
+        ReusableMethods.bekle(3);
+
+    }
+    @Then("As the user closes the home page")
+    public void as_the_user_closes_the_home_page() {
+
+        Driver.quitDriver();
+
+    }
+
+
+
+
 
 
 
