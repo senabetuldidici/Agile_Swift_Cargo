@@ -9,5 +9,8 @@
         <module name="senadeneme" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Agile_Swift_Cargo" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

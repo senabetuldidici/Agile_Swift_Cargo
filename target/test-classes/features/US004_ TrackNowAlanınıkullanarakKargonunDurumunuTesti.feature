@@ -1,5 +1,4 @@
 Feature: US004 Track Now kullanimi
   Scenario: TC01 Kullanici Kargo durumunu kontrol etmek
     Given kullanici "toUrl" sitesine gider
-    When login butonuna tiklar ve gecerli bilgiler ile siteye giris yapar
-
+    

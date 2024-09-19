@@ -1,7 +1,12 @@
 package pages;
 
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
+
 public class NuranPage {
-    public static void main(String[] args) {
+    public NuranPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }git
 
     }
-}
+
