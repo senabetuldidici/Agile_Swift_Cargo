@@ -6,18 +6,25 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.SumeyraPage2;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static utilities.Driver.driver;
+import static utilities.Driver.getDriver;
 
 public class sumeyraStepDefinitions {
 
     SumeyraPage2 sumeyraPage = new SumeyraPage2();
 
     Faker faker = new Faker();
+
+    Actions actions = new Actions(Driver.getDriver());
+
 
     @Given("kullanici {string} sitesine gider")
     public void kullaniciSitesineGider(String arg0) {Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
@@ -165,8 +172,91 @@ public class sumeyraStepDefinitions {
     }
 
 
+    @Given("kullanıci {string} sitesine gider")
+    public void kullanıciSitesineGider(String arg0) {Driver.getDriver().get(ConfigReader.getProperty("loginpageUrl"));
+    }
+
+    @And("Dashboard baslıgının görünür oldugunu test eder")
+    public void dashboardBaslıgınınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.dashboardBaslıgı.isDisplayed());
+    }
+
+    @And("Parcels Bank baslıgının görünür oldugunu test eder")
+    public void parcelsBankBaslıgınınGörünürOldugunuTestEder() {
+
+    }
+
+    @And("Ticket baslıgının görünür oldugunu test eder")
+    public void ticketBaslıgınınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.ticketBaslıgı.isDisplayed());
+    }
+
+    @And("Account baslıgının görünür oldugunu test eder")
+    public void accountBaslıgınınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.accountsBasligi.isDisplayed());
+    }
+
+    @And("Parcels baslıgının görünür oldugunu test eder")
+    public void parcelsBaslıgınınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.parcelsBasligi.isDisplayed());
+    }
 
 
+    @And("Setting baslıgının görünür oldugunu test eder")
+    public void settingBaslıgınınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.settingsBaslıgı.isDisplayed());
+
+    }
+
+    @And("Enter date textbox'nın görünür oldugunu test eder")
+    public void enterDateTextboxNınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.enterDateText.isDisplayed());
+
+
+    }
+
+    @And("Textbox'a veri girilebilir oldugunu test eder")
+    public void textboxAVeriGirilebilirOldugunuTestEder() {
+
+        sumeyraPage.enterDateTextBox.sendKeys("09/18/2024 To 09/18/2024");
+    }
+
+
+    @And("Filter butonuna tıklar")
+    public void filterButonunaTıklar() {
+        sumeyraPage.filterButonu.click();
+    }
+
+
+    @And("Filtreleme isleminin calıstığı test eder")
+    public void filtrelemeIslemininCalıstığıTestEder() {
+        Assertions.assertFalse(sumeyraPage.OppsText.isDisplayed());
+    }
+
+    @And("sayfayı asagı kaydırır")
+    public void sayfayıAsagıKaydırır() {
+
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+
+        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", SumeyraPage2.allReports);
+
+    }
+
+    @And("All Reports alanı görünür oldugunu test eder")
+    public void allReportsAlanıGörünürOldugunuTestEder() {
+
+        Assertions.assertTrue(SumeyraPage2.allReportsText.isDisplayed());
+    }
+
+    @And("Dashbord baslıgına tıklanır ve yönlendirilen sayfanın URL'sinin dogrulugunu test eder")
+    public void dashbordBaslıgınaTıklanırVeYönlendirilenSayfanınURLSininDogrulugunuTestEder() {
+        sumeyraPage.dashboardBaslıgı.click();
+
+        String expectedUrl = "https://qa.agileswiftcargo.com/"; // Beklenen URL
+        String actualUrl = driver.getCurrentUrl(); // Geçerli URL
+        Assertions.assertTrue(actualUrl.contains(expectedUrl),
+                "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
+    }
 
 
 }
