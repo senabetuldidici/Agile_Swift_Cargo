@@ -41,6 +41,66 @@ public class AliPage {
     @FindBy(xpath = "//*[@class='fa fa-location-dot me-2']")
     public WebElement AddressText;
 
+    @FindBy(xpath = "//*[@href='https://qa.agileswiftcargo.com/faq-list']")
+    public WebElement FaqLink;
+
+    @FindBy(xpath = "//*[@href='https://qa.agileswiftcargo.com/about-us']")
+    public WebElement AboutLink;
+
+    @FindBy(xpath = "//*[@href='https://qa.agileswiftcargo.com/contact-send']")
+    public WebElement ContactLink;
+
+    @FindBy(xpath = "//*[@href='https://qa.agileswiftcargo.com/privacy-and-policy']")
+    public WebElement PolicyLink;
+
+    @FindBy(xpath = "//*[@href='https://qa.agileswiftcargo.com/terms-of-condition']")
+    public WebElement TermLink;
+
+    @FindBy (xpath = "//*[@aria-controls='accounts']")
+    public WebElement AccountsTitle;
+
+    @FindBy(xpath = "//*[text()='Payment Received List']")
+    public WebElement PaymentReceivedText;
+
+    @FindBy(xpath = "//*[text()='Total Parcel']")
+    public WebElement TotalParcel;
+
+    @FindBy(xpath = "//*[text()='Total User ']")
+    public WebElement TotalUser ;
+
+    @FindBy(xpath = "//*[text()='Total Merchant']")
+    public WebElement TotalMerchant;
+
+    @FindBy(xpath = "//*[text()='Total Delivery Man']")
+    public WebElement TotalDeliveryMan;
+
+    @FindBy(xpath = "//*[text()='Total Branch']")
+    public WebElement TotalBranch;
+
+    @FindBy(xpath = "//*[text()='Total Accounts']")
+    public WebElement TotalAccounts;
+
+    @FindBy(xpath = "//*[text()='Total Partial Delivered ']")
+    public WebElement TotalPartialDelivered;
+
+    @FindBy(xpath = "//*[text()='Total parcels deliverd']")
+    public WebElement TotalParcelsDeliverd;
+
+    @FindBy(xpath = "//*[text()=' Delivery Man  Statements']")
+    public WebElement DeliveryManStatements;
+
+    @FindBy(xpath = "//*[text()=' Merchant  Statements ']")
+    public WebElement  MerchantStatements;
+
+    @FindBy(xpath = "//*[text()='Branch  Statements']")
+    public WebElement BranchStatements;
+
+    @FindBy(xpath = "//*[@id='apexincomeexpense']")
+    public WebElement  IncomeExpense;
+
+    @FindBy(xpath = "//*[@id='datetimepicker12']")
+    public WebElement  DateTimePicker;
+
 
 }
 
