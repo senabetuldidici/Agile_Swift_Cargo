@@ -5,8 +5,13 @@ Feature: US005 Our Services altındaki başlıkların görünürlüğünün ve t
     Given kullanici "toUrl" sitesine gider
     And 2 saniye bekleme
     When Our Services baslıgının görünür oldugunu test eder
-    And E-Commerce delivery alt baslıgının görünür oldugunu test eder
-    And Pick & Drop alt baslıgının görünür oldugunu test eder
-    And Packageing alt baslıgının görünür oldugunu test eder
-    And Warehousing alt baslıgının görünür oldugunu test eder
+    Then "E-Commerce delivery","Pick & Drop","Packageing","Warehousing" baslıklarının görünür oldugunu test eder
+    And  Hizmetlerin altında görünür ve tıklanabilir bir ok olduğunu test eder
+
+
+  Scenario: TC02 'Service Details' sayfasına yönlendirme testi
+
+    Given kullanici "toUrl" sitesine gider
+    And 2 saniye bekleme
+
 

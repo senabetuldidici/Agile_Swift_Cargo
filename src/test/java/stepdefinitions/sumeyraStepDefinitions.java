@@ -350,5 +350,39 @@ public class sumeyraStepDefinitions {
     }
 
 
+    @When("Our Services baslıgının görünür oldugunu test eder")
+    public void ourServicesBaslıgınınGörünürOldugunuTestEder() {
+        Assertions.assertTrue(sumeyraPage.ourServicesBaslıgı.isDisplayed());
+
+    }
+
+    @Then("{string},{string},{string},{string} baslıklarının görünür oldugunu test eder")
+    public void baslıklarınınGörünürOldugunuTestEder(String header1, String header2, String header3, String header4)
+    {
+
+            if (Driver.getDriver().getCurrentUrl().equals("https://qa.agileswiftcargo.com/")) {
+
+                sumeyraPage.serviceHeadersVisibilty(header1);
+                sumeyraPage.serviceHeadersVisibilty(header2);
+                sumeyraPage.serviceHeadersVisibilty(header3);
+                sumeyraPage.serviceHeadersVisibilty(header4);
+            }
+            else {
+
+                sumeyraPage.serviceHeadersVisibilty(header1);
+                sumeyraPage.serviceHeadersVisibilty(header2);
+                sumeyraPage.serviceHeadersVisibilty(header3);
+                sumeyraPage.serviceHeadersVisibilty(header4);
+
+            }
+
+        }
+
+    @And("Hizmetlerin altında görünür ve tıklanabilir bir ok olduğunu test eder")
+    public void hizmetlerinAltındaGörünürVeTıklanabilirBirOkOlduğunuTestEder() {
+
+        sumeyraPage.navigationArrowsVisibility();
+    }
 }
+
 
