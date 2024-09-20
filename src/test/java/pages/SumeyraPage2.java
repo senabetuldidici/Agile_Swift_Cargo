@@ -1,9 +1,14 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.List;
 
 public class SumeyraPage2 {
 
@@ -129,6 +134,32 @@ public class SumeyraPage2 {
     @FindBy(xpath = "//*[text()='Our Services']")
     public WebElement ourServicesBaslıgı;
 
+    public void serviceHeadersVisibilty(String text) {
 
+        WebDriver driver =  Driver.getDriver();
+
+        Assertions.assertTrue(driver.findElement(By.xpath("(//*[text()='" + text + "'])[1]")).isDisplayed());
+    }
+
+    @FindBy(xpath = "//*[@class='text-primary']")
+    private List<WebElement> navigationArrows;
+
+
+    public void navigationArrowsVisibility() {
+
+        for (int i = 0; i < navigationArrows.size(); i++) {
+            Assertions.assertTrue(navigationArrows.get(i).isDisplayed());
+        }
+
+    }
+
+
+
+
+    // Senaryo
+
+
+    @FindBy(xpath = "(//*[@class=\"fa fa-plus\"])[3]")
+    public WebElement artıButonu;
 
 }

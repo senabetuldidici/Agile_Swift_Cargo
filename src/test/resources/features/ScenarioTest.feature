@@ -7,6 +7,10 @@ Feature: Scenario Test
     And email olarak  "merchantGecerliEmail" girer
     And password olarak  "merchantGecerliPassword" girer
     And Sing in butonuna tıklar
-    And Sidebar menüden Ticket baslıgına tıklar
+    And Sidebar menüden Ticket baslıgına tıklanır
+    Then Sag üstteki + butonuna tıklanır
+    Then Formdaki boş alanlar doldurulur ve Kaydet butonuna tıklanır
+
+
 
 
