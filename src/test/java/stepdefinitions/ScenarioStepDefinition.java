@@ -3,8 +3,11 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.eo.Se;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import pages.SenaPage;
 import pages.SumeyraPage2;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class ScenarioStepDefinition {
@@ -41,16 +44,65 @@ public class ScenarioStepDefinition {
 
     }
 
-    @Then("Formdaki boş alanlar doldurulur ve Kaydet butonuna tıklanır")
+    @Then("Formdaki boş alanlar doldurulur")
     public void formdakiBoşAlanlarDoldurulurVeKaydetButonunaTıklanır() {
         ScenarioStepDefinition.ticketAdd("20/09/2024 tarihli kargom hakkinda;","Kargom teslim edilmedi");
+
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+
+        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", sumeyraPage.saveButonu);
+
     }
 
-    @Then("Click on the Save button")
-    public void click_on_the_button() {
-        senaPage.saveButton.click();
+
+    @And("Kaydet butonuna tıklanır")
+    public void veKaydetButonunaTıklanır() {
+
+        sumeyraPage.saveButonu.click();
+
+    }
+
+    @And("Ticket list alanındaki action butonuna tıklanır")
+    public void ticketListAlanındakiActionButonunaTıklanır() {
+        sumeyraPage.actionButonu.click();
+
+    }
+
+    @And("Edit'e tıklayır")
+    public void editETıklayır() {
+        sumeyraPage.editButonu.click();
 
     }
 
 
+    public static void ticketEdit(String descriptionEdit){
+
+        SenaPage senaPage = new SenaPage();
+
+        senaPage.descriptionBox.sendKeys(descriptionEdit);
+
+    }
+
+    @Then("Gerekli bilgiler düzenlenir")
+    public void gerekliBilgilerDüzenlenir() {
+
+        senaPage.descriptionBox.clear();
+
+        ScenarioStepDefinition.ticketEdit("Tarafıma 20/09/2024 tarihinde teslim edildigi bildirimi aldıgım kolim teslim edilmedi.");
+
+
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+
+        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", sumeyraPage.saveChangeButonu);
+
+    }
+
+    @And("Save Change butonuna tıklanır")
+    public void saveChangeButonunaTıklanır() {
+
+
+        sumeyraPage.saveChangeButonu.click();
+
+
+    }
 }

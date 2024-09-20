@@ -162,4 +162,21 @@ public class SumeyraPage2 {
     @FindBy(xpath = "(//*[@class=\"fa fa-plus\"])[3]")
     public WebElement artıButonu;
 
+    @FindBy(xpath = "//*[@id=\"basicform\"]/div[3]/div/button")
+    public WebElement saveButonu;
+
+    @FindBy(xpath = "(//*[@tabindex=\"-1\"])[3]")
+    public WebElement actionButonu;
+
+
+    @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div/div[2]/div/table/tbody/tr[1]/td[6]/div/div/a[2]/i")
+    public WebElement editButonu;
+
+
+
+    @FindBy(xpath = "//*[@class=\"btn btn-space btn-primary\"]")
+    public WebElement saveChangeButonu;
+
+
+
 }
