@@ -2,7 +2,9 @@ package utilities;
 
 import com.github.javafaker.Options;
 import org.apache.commons.exec.CommandLine;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -72,4 +74,5 @@ public class Driver {
         driver.quit();
         driver =null;
     }
+
 }

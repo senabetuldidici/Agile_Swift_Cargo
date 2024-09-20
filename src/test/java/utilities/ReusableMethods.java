@@ -1,6 +1,7 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 
 import java.io.File;
@@ -153,10 +154,6 @@ public class ReusableMethods {
 
         driver.findElement(By.xpath("//*[text()='Sign in']")).click();
     }
-
-
-
-
 
 }
 
