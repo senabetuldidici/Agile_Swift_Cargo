@@ -109,5 +109,31 @@ public class SenaPage {
     public WebElement merchantPaymentEkrani;
     //h2[text()='Merchant Payment']
 
+    @FindBy(xpath = "//*[@name='service']")
+    public WebElement selectServiceButton;
+
+    @FindBy(xpath = "//*[text()='Pick Up']")
+    public WebElement selectPickUp;
+
+    @FindBy(xpath = "//*[@name='priority']")
+    public WebElement selectPriorityButton;
+
+    @FindBy(xpath = "//*[text()='Low']")
+    public WebElement selectPriorityLow;
+
+    @FindBy(xpath = "//*[@name='department_id']")
+    public WebElement departmanButton;
+
+    @FindBy(xpath = "//*[text()='Finance']")
+    public WebElement financeText;
+
+    @FindBy(xpath = "//*[@name='subject']")
+    public WebElement subjectBox;
+
+    @FindBy(xpath = "//*[@role='textbox']")
+    public WebElement descriptionBox;
+
+    @FindBy(xpath = "//*[text()='Save']")
+    public WebElement saveButton;
 }
 

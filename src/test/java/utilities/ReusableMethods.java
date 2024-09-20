@@ -154,6 +154,10 @@ public class ReusableMethods {
         driver.findElement(By.xpath("//*[text()='Sign in']")).click();
     }
 
+
+
+
+
 }
 
 

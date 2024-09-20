@@ -1,7 +1,7 @@
 Feature: US024 Merchant hesabında invoices görüntülenme testi
 
   Scenario: TC01 Merchant hesabinda invoices linkinin görünürlüğü, tıklanabilirliği ve yönlendirilmesi
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And 2 saniye bekler
     When login butonuna basar
     And email olarak "toMerchantGecerliEmail" girer
