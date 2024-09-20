@@ -299,6 +299,7 @@ public class sumeyraStepDefinitions {
                 "URL beklenen URL ile eşleşmiyor. Beklenen: " + expectedUrl + ", Mevcut: " + actualUrl);
 
 
+
     }
 
     @When("instagram simgesinin görünür oldugunu test eder")
