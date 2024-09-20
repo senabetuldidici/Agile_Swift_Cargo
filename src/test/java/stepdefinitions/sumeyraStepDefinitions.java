@@ -382,6 +382,8 @@ public class sumeyraStepDefinitions {
     public void hizmetlerinAltındaGörünürVeTıklanabilirBirOkOlduğunuTestEder() {
 
         sumeyraPage.navigationArrowsVisibility();
+
+
     }
 }
 
