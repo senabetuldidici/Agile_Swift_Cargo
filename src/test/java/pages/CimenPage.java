@@ -142,6 +142,71 @@ public class CimenPage {
     @FindBy(xpath = " //*[@class='table-responsive']//th[2]")
     public WebElement weight;
 
+    @FindBy(xpath = ("//*[@class='navbar-brand w-100 pt-0']"))
+    public WebElement loginAdminButton;
+
+
+    @FindBy(xpath = ("//*[@id ='email']"))
+    public WebElement emailText;
+
+    @FindBy(xpath=("//*[@id ='password']"))
+    public WebElement passwordText;
+
+    @FindBy(xpath = "//*[text()='Sign in']")
+    public WebElement signInButton;
+    @FindBy(xpath = "//*[text()='Sign up here']")
+    public WebElement signUpHere;
+    @FindBy(xpath = ("//img[@class='logo-img']"))
+    public WebElement logo;
+
+    @FindBy(xpath = ("//*[@class='icon  fab fa-facebook-square']"))
+    public WebElement facebookLink;
+
+    @FindBy(xpath = ("//*[@title='Play Store']"))
+    public WebElement googleLink;
+
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerButton;
+    @FindBy(id = "business_name")
+    public WebElement businessName;
+    @FindBy(id = "full_name")
+    public WebElement fullName;
+    @FindBy(id = "mobile")
+    public WebElement mobile;
+
+    @FindBy(xpath = "//select[@id='hub']")
+    public WebElement editHub;
+
+    @FindBy(xpath = " //*[@class='card-footer-item card-footer-item-bordered'][2]")
+    public WebElement forgotButton;
+
+    @FindBy(xpath = "  //*[text()='Send Password Reset Link']")
+    public WebElement resetButton;
+
+
+    public void emailEnter(String email) {
+        emailBox.click();
+        emailText.sendKeys(ConfigReader.getProperty("email"));
+
+        ReusableMethods.bekle(2);
+        resetButton.click();
+
+    }
+
+    @FindBy(xpath = "//*[@class='alert alert-success']")
+    public WebElement alertText;
+
+    @FindBy(xpath = " //p[text()='Merchant Dashboard']")
+    public WebElement dashboardtext;
+
+
+    public void loginAdminMethodu(String email,String password){
+        emailBox.sendKeys(ConfigReader.getProperty("adminemail"));
+        passwordBox.sendKeys(ConfigReader.getProperty("adminpassword"));
+        ReusableMethods.scrollWithUiScrollableAndClick("Sign in");
+
+    }
+
 
 
 }
