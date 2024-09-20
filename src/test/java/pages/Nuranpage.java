@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.java.zh_cn.假如;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -43,6 +44,46 @@ public class Nuranpage {
     public WebElement TrackNowButonu;
     @FindBy(xpath = "/html/body/section[2]/div/div[1]/div/h3/span")
     public WebElement ParcelTrackingNo;
+    @FindBy(xpath = "//*[@id=\"offcanvasDarkNavbar\"]/div[2]/ul/li[2]/a")
+    public WebElement Pricing;
+
+    @FindBy(xpath = "//*[@id=\"pricing\"]/div/div[1]/div/h3/span")
+    public WebElement AgileSwiftCargoPricingYazisi;
+
+    @FindBy(xpath = "/html/body/div[1]/div[4]/ul/li[7]/a")
+    public WebElement Report;
+
+
+    @FindBy(xpath = "//*[@id=\"reports\"]/ul/li[2]/a")
+    public WebElement TotalSummery;
+    @FindBy(xpath = "//*[@href='https://qa.agileswiftcargo.com/login']")
+    public WebElement AdminloginLinki;
+
+    @FindBy (xpath = "//*[@id='email']")
+    public WebElement AdminemailTextBox;
+
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement AdminpasswordTextbox;
+
+
+    @FindBy (xpath = "//*[@type='submit']")
+    public WebElement AdminSıgnInbutonu;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/ul/li[3]/a")
+    public WebElement DeliverMans;
+
+    @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[1]/div[2]/a")
+    public WebElement DeliverMansKisiEkleme;
+
+    @FindBy(xpath = "//*[@id=\"name\"]")
+    public WebElement DeliverMansForm;
+
+    @FindBy(xpath = "//*[@id=\"input-select\"]")
+    public WebElement HugSelect;
+
+    @FindBy(xpath = "//*[@id=\"input-select\"]/option[25]")
+    public WebElement HugWashinton;
+
 
 
 }
