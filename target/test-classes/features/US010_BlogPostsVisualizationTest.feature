@@ -2,7 +2,7 @@ Feature: US010 Anasayfa "Blog" yazilarinin goruntulenme testi
 
   Scenario: TC01/TC02 Blogs bağlantısının görünürlüğü, tıklanabilirliği ve yonlendirilmesi
 
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And Blogs menü başlıgının görünür oldugunu test eder,
     And 2 saniye bekler
     When Blogs menü başlıgının tiklanabilir oldugunu test eder,
@@ -10,14 +10,14 @@ Feature: US010 Anasayfa "Blog" yazilarinin goruntulenme testi
     And sayfayi kapatir
 
   Scenario: TC03  Blog yazısı tıklama ve doğrulama
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And Blogs menü başlığına tıklar,
     When Acilan sayfada bulunan ilk blog yazisinin basligini kaydeder ve basliga tiklar,
     Then Yönlendirildiği sayfadaki blog yazısının başlığı ile kaydettigi basligin ayni oldugunu test eder,
     And sayfayi kapatir
 
   Scenario: TC04 Blog yazisinin gorunurluk sayisinin artisini dogrulama
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And Blogs menü başlığına tıklar,
     When Acilan sayfada bulunan ilk blog yazisinin gorunurluk sayisini kaydeder,
     And 2 saniye bekler
@@ -26,7 +26,7 @@ Feature: US010 Anasayfa "Blog" yazilarinin goruntulenme testi
     And sayfayi kapatir
 
   Scenario: TC05 Lastest Blogs alanında diğer blog yazıları görünür ve tıklanabilir oldugunu dogrulama
-    Given kullanici "toUrl" sitesine gider
+    Given kullanıcı "toUrl" sitesine gider
     And Blogs menü başlığına tıklar,
     When Acilan sayfada bulunan ilk blog yazisinin basligina tiklar,
     And Acilan sayfada Latest Blogs basliginin gorunur oldugunu test eder,
