@@ -185,5 +185,34 @@ public class AliStepdefinitons {
         aliPage.DateTimePicker.isDisplayed();
     }
 
+    @When("Branch Manage sayfasına gider")
+    public void BranchManagePage() {
+        aliPage.BranchManageTitle.click();
+        WebElement termLink = driver.findElement(By.xpath("//*[@href='https://qa.agileswiftcargo.com/admin/hubs']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", termLink);
+    }
+
+    @When("Filter butonunun çalıştığını test eder")
+    public void FilterButtonTest() {
+        aliPage.HubNameTextBox.sendKeys(ConfigReader.getProperty("yeni"));
+        aliPage.FilterButton.click();
+    }
+
+    @When("Clear butonunun çalıştığını test eder")
+    public void ClearButtonTest() {
+        aliPage.HubNameTextBox.sendKeys(ConfigReader.getProperty("yeni"));
+        aliPage.FilterButton.click();
+        aliPage.ClearButton.click();
+    }
+
+    @When("Plus butonunun çalıştığını test eder")
+    public void PlusButtonTest() {
+        aliPage.PlusButton.click();
+    }
+
+    @When("Action butonunun çalıştığını test eder")
+    public void ActionButtonTest() {
+        aliPage.ActionButton.click();
+    }
 
 }

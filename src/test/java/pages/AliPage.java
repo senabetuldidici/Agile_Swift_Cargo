@@ -101,6 +101,22 @@ public class AliPage {
     @FindBy(xpath = "//*[@id='datetimepicker12']")
     public WebElement  DateTimePicker;
 
+    @FindBy (xpath = "//*[@id='name']")
+    public WebElement HubNameTextBox;
 
+    @FindBy(xpath = "//*[@class='btn btn-space btn-primary']")
+    public WebElement FilterButton;
+
+    @FindBy(xpath = "//*[@class='btn btn-space btn-secondary']")
+    public WebElement ClearButton;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary btn-sm float-right']")
+    public WebElement PlusButton;
+
+    @FindBy(xpath = "//*[@class='btn btn-primary dropdown-toggle dropdown-toggle-split']")
+    public WebElement ActionButton;
+
+    @FindBy(xpath = "(//*[@class='nav-item'])[1]")
+    public WebElement BranchManageTitle;
 }
 
