@@ -10,7 +10,7 @@ Feature: Scenario Test
     And Sidebar menüden Ticket baslıgına tıklanır
     Then Sag üstteki + butonuna tıklanır
     Then Formdaki boş alanlar doldurulur
-    And 1 saniye bekleme
+    And 2 saniye bekleme
     And Kaydet butonuna tıklanır
     And Ticket list alanındaki action butonuna tıklanır
     And Edit'e tıklayır
