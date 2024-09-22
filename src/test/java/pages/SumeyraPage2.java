@@ -173,7 +173,6 @@ public class SumeyraPage2 {
     public WebElement editButonu;
 
 
-
     @FindBy(xpath = "//*[@class=\"btn btn-space btn-primary\"]")
     public WebElement saveChangeButonu;
 

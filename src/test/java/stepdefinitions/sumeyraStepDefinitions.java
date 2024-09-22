@@ -6,8 +6,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import pages.SumeyraPage2;
 import utilities.ConfigReader;
@@ -26,14 +30,19 @@ public class sumeyraStepDefinitions {
     Actions actions = new Actions(Driver.getDriver());
 
 
+
+
     @Given("kullanici {string} sitesine gider")
     public void kullaniciSitesineGider(String arg0) {Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+
     }
 
     @When("login butonuna  basar")
     public void loginButonunaBasar() {
         sumeyraPage.loginButonu.click();
     }
+
+
 
     @And("email kutusunun görünür oldugunu test eder")
     public void emailKutusununGörünürOldugunuTestEder() {
@@ -44,6 +53,9 @@ public class sumeyraStepDefinitions {
     @And("email olarak  {string} girer")
     public void emailOlarakGirer(String merchantGecerliEmail) {
         sumeyraPage.emailKutusu.sendKeys(ConfigReader.getProperty("merchantGecerliEmail"));
+
+        ReusableMethods.bekle(1);
+
     }
 
     @And("password kutusunun görünür oldugunu test eder")
@@ -54,12 +66,15 @@ public class sumeyraStepDefinitions {
     public void passwordOlarakGirer(String merchantGecerliPassword) {
         sumeyraPage.sifreKutusu.sendKeys(ConfigReader.getProperty("merchantGecerliPassword"));
 
+        ReusableMethods.bekle(3);
+
     }
     @And("Sing in butonuna tıklar")
     public void singInButonunaTıklar() {
         sumeyraPage.signInButonu.click();
-    }
 
+        ReusableMethods.bekle(2);
+    }
 
     @And("sayfayı kapatir")
     public void sayfayıKapatir() { Driver.quitDriver();  // Tarayıcı kapanır

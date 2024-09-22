@@ -18,12 +18,19 @@ public class ScenarioStepDefinition {
     @And("Sidebar menüden Ticket baslıgına tıklanır")
     public void sidebarMenüdenTicketBaslıgınaTıklar() {
         sumeyraPage.ticketBaslıgı.click();
+
+        ReusableMethods.bekle(2);
+
     }
 
 
     @Then("Sag üstteki + butonuna tıklanır")
     public void sagÜsttekiButonunaTıklar() {
         sumeyraPage.artıButonu.click();
+
+        ReusableMethods.bekle(2);
+
+
 
     }
 
@@ -60,17 +67,25 @@ public class ScenarioStepDefinition {
 
         sumeyraPage.saveButonu.click();
 
+        ReusableMethods.bekle(2);
+
+
     }
 
     @And("Ticket list alanındaki action butonuna tıklanır")
     public void ticketListAlanındakiActionButonunaTıklanır() {
         sumeyraPage.actionButonu.click();
 
+        ReusableMethods.bekle(2);
+
     }
 
     @And("Edit'e tıklayır")
     public void editETıklayır() {
         sumeyraPage.editButonu.click();
+
+        ReusableMethods.bekle(2);
+
 
     }
 
@@ -95,13 +110,16 @@ public class ScenarioStepDefinition {
 
         jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", sumeyraPage.saveChangeButonu);
 
+        ReusableMethods.bekle(2);
+
     }
 
     @And("Save Change butonuna tıklanır")
     public void saveChangeButonunaTıklanır() {
 
-
         sumeyraPage.saveChangeButonu.click();
+
+        ReusableMethods.bekle(2);
 
 
     }

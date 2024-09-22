@@ -11,7 +11,6 @@ Feature: US017 Merchant Paneli Login Testi
     And password olarak  "merchantGecerliPassword" girer
     And Sing in butonuna tıklar
     Then basarılı bir giris yapabildiğini test eder
-    And sayfayı kapatir
 
 
 
