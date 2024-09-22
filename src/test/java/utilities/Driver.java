@@ -29,7 +29,6 @@ public class Driver {
     private Driver(){
 
 
-
     }
 
     public static WebDriver driver;
@@ -38,6 +37,7 @@ public class Driver {
 
 
         options.addArguments("--disable-search-engine-choice-screen");
+        options.addArguments("--disable-notifications");  //pop-up bildirimlerini kapatmak için
 
         if (driver == null){
             String istenenBrowser = ConfigReader.getProperty("browser"); // firefox
@@ -68,6 +68,8 @@ public class Driver {
         return driver;
 
     }
+
+
 
 
     public static void quitDriver(){
